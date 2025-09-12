@@ -1,0 +1,128 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- TODO: Add a description of the page for better SEO and sharing previews. -->
+  <meta name="description" content="Add a description to provide a brief summary of the content." />
+
+  <!-- TODO: Insert a concise, descriptive title that summarizes your page's content. -->
+  <title>NCLL application form</title>
+
+  <!---------- GC Design System Utility ---------->
+  <!-- TODO: Replace <version-number> with the latest version number to receive corresponding updates of the GC Design System utility framework. All notable changes will be documented in the changelog: https://github.com/cds-snc/gcds-utility/blob/main/CHANGELOG.md -->
+  <link rel="stylesheet"
+    href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-utility@1.9.2/dist/gcds-utility.min.css" />
+
+  <!---------- GC Design System Components ---------->
+  <!-- TODO: Replace <version-number> with the latest version number to receive corresponding updates of GC Design System Components. All notable changes will be documented in the changelog: https://github.com/cds-snc/gcds-components/blob/main/CHANGELOG.md -->
+  <link rel="stylesheet"
+    href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.40.0/dist/gcds/gcds.css" />
+  <script type="module"
+    src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.40.0/dist/gcds/gcds.esm.js"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="https://design-system.alpha.canada.ca/styles/style.css"> <!-- Custom styles -->
+
+  <!-- TODO: If needed, uncomment and link your custom CSS file here. -->
+  <!-- <link rel="stylesheet" href="path/to/custom.css" /> -->
+</head>
+
+<body>
+  <gcds-header lang-href="#" skip-to-href="#main-content" role="banner" class="hydrated">
+    <!-- Search box -->
+    <gcds-search slot="search" class="hydrated"></gcds-search>
+    <!--Top nav bar -->
+    <gcds-top-nav slot="menu" label="Non-competitive local licensing portal" alignment="right" class="hydrated">
+      <gcds-nav-link href="#home" slot="home">Non-Competitive Local Licensing Portal</gcds-nav-link>
+      <gcds-nav-link>Alfrancis Guerrero</gcds-nav-link>
+      <gcds-nav-group open-trigger="Bell - 100398401" menu-label="Bell - 100398401">
+        <gcds-nav-link href="#">Switch licensee</gcds-nav-link>
+        <gcds-nav-link href="#">Log out</gcds-nav-link>
+      </gcds-nav-group>
+    </gcds-top-nav>
+
+    <!-- Breadcrumb -->
+    <gcds-breadcrumbs hide-canada-link="true" slot="breadcrumb" class="hydrated">
+      <gcds-breadcrumbs-item href="index.html" role="listitem"
+        class="gcds-breadcrumbs-item hydrated">Canada.ca</gcds-breadcrumbs-item>
+      <gcds-breadcrumbs-item href="index.html" role="listitem" class="gcds-breadcrumbs-item hydrated">Spectrum
+        Management System</gcds-breadcrumbs-item>
+    </gcds-breadcrumbs>
+  </gcds-header>
+
+  <!-- Main heading -->
+  <gcds-container id="heading" main-container="" size="xl" centered="" tag="head" class="hydrated">
+    <gcds-heading tag="h1">
+      NCLL application form
+    </gcds-heading>
+  </gcds-container>
+
+  <!-- Main content-->
+  <gcds-container id="main-content" main-container="" size="xl" centered="" tag="main" class="hydrated">
+    <gcds-grid columns="1fr" columns-tablet="1fr" columns-desktop="1fr ">
+
+      <!-- Stepper -->
+      <gcds-container>
+        <gcds-stepper current-step="2" total-steps="5" tag="h2">
+          General info
+        </gcds-stepper>
+
+        <!-- Page description -->
+        <gcds-text>Provide the licence duration, business size, and add notes.</gcds-text>
+
+        <!-- Start of input fields -->
+        <gcds-fieldset legend="Licence term" legend-size="h3" hint="" style="margin-top:25px">
+
+          <gcds-date-input legend="Start date" name="props-default" format="full">
+          </gcds-date-input>
+          <gcds-radios name="Duration type" legend="Select renewable or temporary licence" options='[
+    { "label": "Renewable", "id": "radio1", "value": "radio1"},
+    { "label": "Temporary", "id": "radio2", "value": "radio2"}]'
+            hint="Renewable licences are subject to renewal every year on March 31st. Temporary licences are up to 11 months."
+            required>
+          </gcds-radios>
+
+          <gcds-date-input legend="End date" name="props-default" format="full">
+          </gcds-date-input>
+        </gcds-fieldset>
+
+        <gcds-fieldset legend="Business information" legend-size="h3" hint="" style="margin-top:25px">
+          <gcds-radios name="Duration type"
+            legend="Does your business or any of its affiliates or subsidiaries currently have 100,000 or more retail mobile phone subscribers?"
+            options='[
+    { "label": "Yes", "id": "radio1", "value": "radio1"},
+    { "label": "No", "id": "radio2", "value": "radio2"}]' hint="Any entity or affiliate of that entity is ineligible to hold a licence for the blocks from 27.50 MHz to 28.35 MHz. Learn more in
+      section 6.2 in SPB-001-23."></gcds-radios>
+          </gcds-radios>
+        </gcds-fieldset>
+
+        <gcds-fieldset legend="Notes" legend-size="h3" hint="" style="margin-top:25px">
+          <gcds-input input-id="undefined-input" label="Application identifier "
+            hint="Use this field to identify your application. However, like all data entered on this form, this will become publicly viewable if the licence is granted."
+            size="20">
+          </gcds-input>
+        </gcds-fieldset>
+
+        <!-- Navigation buttoms -->
+        <section style="margin-top: 25px">
+          <gcds-button button-role="secondary" type="link" href="Step 1 - Select band.html">
+            Back
+          </gcds-button>
+          <gcds-button type="link" href="Step 3 - Technical details.html">
+            Next
+          </gcds-button>
+        </section>
+
+        <!-- Date modified -->
+        <gcds-date-modified class="hydrated">2024-08-22</gcds-date-modified>
+      </gcds-container>
+
+
+    </gcds-grid>
+  </gcds-container>
+
+  </gcds-grid>
+  <gcds-footer display="full" contextual-heading="Innovation, Science and Economic Development"
+    contextual-links="{ &quot;Contact us&quot;: &quot;#&quot;}" role="contentinfo" aria-label="Footer" class="hydrated">
+  </gcds-footer>
+</body>

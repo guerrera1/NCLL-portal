@@ -1,0 +1,84 @@
+<!-- GC Design System -->
+
+<head>
+  <link rel="stylesheet"
+    href="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.38.0/dist/gcds/gcds.css" />
+  <script type="module"
+    src="https://cdn.design-system.alpha.canada.ca/@cdssnc/gcds-components@0.38.0/dist/gcds/gcds.esm.js"></script>
+
+
+</head>
+
+<body style="margin:0">
+  <gcds-header lang-href="#" skip-to-href="#main-content" role="banner" class="hydrated">
+    <!-- The slot="search" attribute adds the search component to the header. -->
+    <gcds-search slot="search" class="hydrated"></gcds-search>
+
+    <!-- The slot="breadcrumb" attribute adds the breadcrumbs component to the header. -->
+    <gcds-breadcrumbs hide-canada-link="true" slot="breadcrumb" class="hydrated">
+      <!-- TODO: Adjust the breadcrumb links with the correct ones for your site. -->
+      <gcds-breadcrumbs-item href="index.html" role="listitem" class="gcds-breadcrumbs-item hydrated">Non-competitive
+        local licensing</gcds-breadcrumbs-item>
+    </gcds-breadcrumbs>
+  </gcds-header>
+
+  <gcds-container id="main-content" main-container="" size="xl" centered="" tag="main" class="hydrated"
+    style="margin-bottom: var(--gcds-spacing-300);">
+
+    <gcds-heading tag="h1">
+      NCLL application form
+    </gcds-heading>
+
+    <gcds-stepper current-step="2" total-steps="5" tag="h2">
+      General information
+    </gcds-stepper>
+
+
+    <gcds-heading tag="h3">Licence term</gcds-heading>
+
+    <gcds-date-input legend="Start date" name="props-default" format="full">
+    </gcds-date-input>
+
+    <gcds-radios name="Duration type" legend="Select renewable or temporary licence" options='[
+    { "label": "Renewable", "id": "radio1", "value": "radio1"},
+    { "label": "Temporary", "id": "radio2", "value": "radio2"}]'
+      hint="Renewable licences are subject to renewal every year on March 31st. Temporary licences are up to 11 months."
+      required>
+    </gcds-radios>
+
+    <gcds-date-input legend="End date" name="props-default" format="full">
+    </gcds-date-input>
+
+    <gcds-heading tag="h3">Business information</gcds-heading>
+    <gcds-radios name="Duration type"
+      legend="Does your business or any of its affiliates or subsidiaries currently have 100,000 or more retail mobile phone subscribers?"
+      options='[
+    { "label": "Yes", "id": "radio1", "value": "radio1"},
+    { "label": "No", "id": "radio2", "value": "radio2"}]' hint="Any entity or affiliate of that entity is ineligible to hold a licence for the blocks from 27.50 MHz to 28.35 MHz. Learn more in
+      section 6.2 in SPB-001-23."></gcds-radios>
+    </gcds-radios>
+
+    <gcds-heading tag="h3">Application notes</gcds-heading>
+    <gcds-input input-id="undefined-input" label="Application identifier "
+      hint="For your own use. However, like all data entered on this form, this will become publicly viewable if the licence is granted."
+      size="12">
+    </gcds-input>
+
+    <section style="margin-top: 25px">
+      <gcds-button button-role="secondary">
+        Back
+      </gcds-button>
+
+      <gcds-button>
+        Next
+      </gcds-button>
+    </section>
+
+
+    <gcds-date-modified class="hydrated">2024-08-22</gcds-date-modified>
+
+  </gcds-container>
+  <gcds-footer display="full" contextual-heading="Innovation, Science and Economic Development"
+    contextual-links="{ &quot;Contact us&quot;: &quot;#&quot;}" role="contentinfo" aria-label="Footer" class="hydrated">
+  </gcds-footer>
+</body>
